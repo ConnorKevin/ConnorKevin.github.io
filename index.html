@@ -328,12 +328,13 @@
 	<script>
          function toggleAuthors(element) {
             const moreAuthors = element.previousElementSibling;
-            if (moreAuthors.classList.contains('show-authors')) {
-                moreAuthors.classList.remove('show-authors');
-                element.textContent = "6 more authors";
-            } else {
-                moreAuthors.classList.add('show-authors');
+            if (moreAuthors.style.display === "none" || moreAuthors.style.display === "") {
+                moreAuthors.style.display = "inline";
                 element.textContent = "Show less";
+            } else {
+                moreAuthors.style.display = "none";
+                element.textContent = "6 more authors";
+            }
             }
          }
        </script>

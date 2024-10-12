@@ -65,6 +65,18 @@
                 display: block;
                 width: 100%;
             }
+
+	.more-authors {
+            display: none; /* 默认隐藏详细作者列表 */
+        }
+        .show-authors {
+            display: inline; /* 控制详细作者列表显示 */
+        }
+        .toggle-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
 } */
 
 
@@ -163,6 +175,15 @@
 		        <a style="color : #000000;">Sihang Li</a>,
 			<a style="color : #000000;">Xinhao Liu</a>,
 			<a style="color : #000000;">Moonjun Gong</a>,
+			<a style="color : #000000;"><strong>Kenan Li</strong></a>,
+			<a style="color : #000000;"><strong>Kenan Li</strong></a>,
+			<p>
+				<span>Author1, Author2, Author3,</span>
+				<span class="more-authors">Author4, Author5, Author6, Author7, Author8, Author9</span>
+				<span class="toggle-link" onclick="toggleAuthors(this)">6 more authors</span>
+			</p>
+			<a style="color : #000000;"><strong>Kenan Li</strong></a>,
+			<a style="color : #000000;"><strong>Kenan Li</strong></a>,
 			<a style="color : #000000;"><strong>Kenan Li</strong></a>,
 			<a style="color : #000000;">and 6 more authers</a><br/>
 			<a style="color : #000000;"><i>IEEE/RSJ International Conference on Intelligent Robots and Systems（IROS), 2024 </i></a><br/>
@@ -304,5 +325,17 @@
 	      
 			
 	</article>
+	<script>
+         function toggleAuthors(element) {
+            const moreAuthors = element.previousElementSibling;
+            if (moreAuthors.classList.contains('show-authors')) {
+                moreAuthors.classList.remove('show-authors');
+                element.textContent = "6 more authors";
+            } else {
+                moreAuthors.classList.add('show-authors');
+                element.textContent = "Show less";
+            }
+         }
+       </script>
 </body>
 </html> 

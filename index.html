@@ -54,7 +54,7 @@
 	        table img {
             width: 100%;
             height: auto;
-        }
+        }*/
 
         @media (max-width: 768px) {
             table {
@@ -331,11 +331,11 @@
 	            moreAuthors.classList.toggle('more-authors');
 	            
 	            // 如果详细作者列表现在是显示状态，修改按钮文字
-	            if (!moreAuthors.classList.contains('more-authors')) {
-	                element.textContent = "Show less";
-	            } else {
-	                element.textContent = "6 more authors";
-	            }
+		    if (moreAuthors.classList.contains('show-authors')) {
+		        element.textContent = "Show less";
+		    } else {
+		        element.textContent = "6 more authors";
+		    }
 	        }
        </script>
 </body>
